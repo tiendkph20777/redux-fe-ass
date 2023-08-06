@@ -5,6 +5,7 @@ export interface Iproducts {
     images: string,
     details: string,
     categoryId: number
+    quantity: number
 }
 
 
@@ -21,4 +22,12 @@ export interface IUser {
     image?: string,
     email: string,
     tel?: number
+}
+
+export interface ICart {
+    id: number;
+    products: (Iproducts
+        // & { quantity: number }
+    )[];
+    // user: IUser;
 }
