@@ -4,16 +4,25 @@ import { Col, Row, Button, Table, Pagination } from 'antd';
 import { Breadcrumb } from 'antd';
 import Banner from '../components/Banner';
 import { useFetchProductQuery } from '../../services/product.service';
+<<<<<<< HEAD
 import { Iproducts } from '../../models';
 
+=======
+import { useAddCartMutation } from '../../services/cart.service';
+import { Iproducts } from '../../models';
+>>>>>>> 3e4ba079c0318e0b853e590065135485f6d7ceff
 const style: React.CSSProperties = { textAlign: 'center', margin: '10px 21px', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px', padding: '8px', borderRadius: '8px' };
 const image_style: React.CSSProperties = { borderRadius: '8px' };
 
 const ProductList = () => {
     const { data, isLoading } = useFetchProductQuery();
+    const [addCartMutation, { isLoading: isAddingToCart }] = useAddCartMutation();
     const [currentPage, setCurrentPage] = useState<number>(1);
     const productsPerPage = 8;
-
+    const handleAddToCart = (item: Iproducts) => {
+        const products = { ...item, quantity: 1 } // Log the product details
+        addCartMutation({ products });
+    };
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
     };
@@ -104,18 +113,23 @@ const ProductList = () => {
                 </div> */}
 
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    {currentProducts?.map((item) => {
+                    {currentProducts?.map((item: Iproducts) => {
                         return (
                             <Col style={style} className="gutter-row" span={5} key={item.id}>
                                 <Link to={'/products/' + item.id} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                    <div key={item.id}>
+                                    <div>
                                         <img style={{ width: '100%', borderRadius: '10px' }} src={item.images} alt="" />
                                         <h2 style={{ minHeight: '3em', fontSize: '20px' }}>{item.name}</h2>
-                                        <p style={{ minHeight: '1em', fontSize: "20px" }}>{item.price} VNĐ</p>
-                                        {/* <Button disabled>{item.categoryId}</Button> */}
-                                        {/* <p style={{ minHeight: '4em' }}>{item.details}</p> */}
+                                        <p style={{ minHeight: '1em', fontSize: '20px' }}>{item.price} VNĐ</p>
                                     </div>
                                 </Link>
+                                <Button
+                                    onClick={() => handleAddToCart(item)}
+                                    loading={isAddingToCart}
+                                    disabled={isAddingToCart}
+                                >
+                                    Add to Cart
+                                </Button>
                             </Col>
                         );
                     })}

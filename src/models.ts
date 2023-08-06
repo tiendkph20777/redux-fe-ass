@@ -5,6 +5,7 @@ export interface Iproducts {
     images: string,
     details: string,
     categoryId: number
+    quantity: number
 }
 
 
@@ -22,4 +23,12 @@ export interface IUser {
     password: string,
     accessToken?: string
     role?: string,
+}
+
+export interface ICart {
+    id: number;
+    products: (Iproducts
+        // & { quantity: number }
+    )[];
+    // user: IUser;
 }
