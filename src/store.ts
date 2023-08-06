@@ -1,13 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { categoryAPI } from './services/category.service';
-import productAPI from './services/product.service'; // Assuming you already have this imported
+import { productAPI } from './services/product.service'; // Assuming you already have this imported
+import { userAPI } from './services/user.service';
 
 export const store = configureStore({
   reducer: {
     products: productAPI.reducer,
     categories: categoryAPI.reducer,
+    users: userAPI.reducer,
   },
-  middleware: (defaultMiddleware) => defaultMiddleware().concat(productAPI.middleware, categoryAPI.middleware),
+  middleware: (defaultMiddleware) => defaultMiddleware().concat(productAPI.middleware, categoryAPI.middleware, userAPI.middleware),
+
 });
 
 export type RootState = ReturnType<typeof store.getState>;

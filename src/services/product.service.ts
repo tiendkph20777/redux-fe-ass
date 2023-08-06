@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery, setupListeners } from "@reduxjs/toolkit/quer
 import { Iproducts } from "../models"
 import { store } from "../store"
 
-const productAPI = createApi({
+export const productAPI = createApi({
     reducerPath: "products",
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:3000"
@@ -45,5 +45,4 @@ const productAPI = createApi({
 // setupListeners(store.dispatch)
 
 export const { useFetchProductQuery, useRemoveProductMutation, useFetchOneProductQuery, useUpdateProductMutation } = productAPI
-export default productAPI
 

@@ -10,7 +10,7 @@ const Banner = () => {
             <div>
                 <h2 style={{ marginBottom: '20px' }}>Đăng kí ngay để nhận ưu đãi đặc biệt</h2>
                 <p style={{ marginBottom: '20px' }}>Hãy đăng kí ngay để không bỏ lỡ cơ hội nhận ưu đãi đặc biệt từ chúng tôi!</p>
-                <Button type="primary"><Link to={'/users/signup'}>Đăng kí ngay</Link></Button>
+                <Button type="primary" style={{ color: "red" }}><Link to={'signup'}>Đăng kí ngay</Link></Button>
             </div>
         </div>
     );

@@ -14,11 +14,14 @@ import AdminPage from './pages/admin/dash';
 import Categories from './pages/admin/category/Categories';
 import AddCategory from './pages/admin/category/AddCategory';
 import UpdateCategory from './pages/admin/category/UpdateCategory';
+import Signin from './pages/client/signin/signin';
+import Signup from './pages/client/signin/signup';
 
 function App() {
   return (
     <Router>
       <Routes>
+        {/*  */}
         <Route path="/" element={<Website />}>
           <Route index element={<HomePage />} />
           <Route path="/products/:id" element={<ProductDetail />} />
@@ -29,15 +32,19 @@ function App() {
           <Route index element={<AdminPage />} />
           <Route path='products' >
             <Route index element={<ListProducts />} />
-            <Route path='add' element={<AddProduct />} />
-            <Route path=':id/update' element={<UpdateProduct />} />
+            {/* <Route path='add' element={<AddProduct />} /> */}
+            {/* <Route path=':id/update' element={<UpdateProduct />} /> */}
           </Route>
           <Route path='category' >
             <Route index element={<Categories />} />
-            <Route path='add' element={<AddCategory />} />
-            <Route path=':id/update' element={<UpdateCategory />} />
+            {/* <Route path='add' element={<AddCategory />} /> */}
+            {/* <Route path=':id/update' element={<UpdateCategory />} /> */}
           </Route>
         </Route>
+        {/* singin */}
+        <Route path='signin' element={<Signin />} />
+        <Route path='signup' element={<Signup />} />
+        {/*  */}
       </Routes>
     </Router >
   );

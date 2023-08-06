@@ -135,20 +135,22 @@
     {
       "name": "Laxus",
       "password": "123",
-      "rePassword": "123",
       "email": "laxus2301@gmail.com",
-      "tel": "0862325011",
       "id": 1,
       "role": "admin"
     },
     {
       "name": "user01",
       "password": "Vinh0987@",
-      "rePassword": "Vinh0987@",
       "email": "user01@gmail.com",
-      "tel": "0862325011",
       "id": 2,
       "role": "member"
+    },
+    {
+      "email": "tien@gmail.com",
+      "password": "123456",
+      "role": "member",
+      "id": 3
     }
   ]
 }

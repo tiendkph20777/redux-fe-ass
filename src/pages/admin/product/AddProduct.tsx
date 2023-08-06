@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Iproducts } from '../../types/products';
+import { Iproducts } from '../../../models';
 import { Button, Checkbox, Form, Input, notification, Select } from 'antd';
-import { ICategories } from '../../types/categories';
+import { ICategories } from '../../../models';
 
 interface IProps {
     category: ICategories[];

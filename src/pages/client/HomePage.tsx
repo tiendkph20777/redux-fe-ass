@@ -10,7 +10,6 @@ const image_style: React.CSSProperties = { borderRadius: '8px' };
 
 const HomePage = () => {
     const { data, isLoading } = useFetchProductQuery();
-    // console.log('data :>> ', data);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const productsPerPage = 8;
 

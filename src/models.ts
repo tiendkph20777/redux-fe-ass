@@ -15,10 +15,11 @@ export interface ICategories {
 
 
 export interface IUser {
-    id: number,
-    name: string,
-    password: string,
-    image?: string,
+    id?: string | number,
+    firstname?: string,
+    lastname?: string,
     email: string,
-    tel?: number
+    password: string,
+    accessToken?: string
+    role?: string,
 }
