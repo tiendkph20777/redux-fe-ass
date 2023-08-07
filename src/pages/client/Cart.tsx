@@ -91,9 +91,11 @@ const Cart = () => {
                 </Row>
                 <Col span={24} style={{ textAlign: 'right' }}>
                     <strong>Total Price: {totalPrice} VNĐ</strong>
-                    <Button type="primary">
-                        Thanh Toán
-                    </Button>
+                    <Link to="/checkout">
+                        <Button type="primary">
+                            Thanh Toán
+                        </Button>
+                    </Link>
                 </Col>
             </div>
         </div>
