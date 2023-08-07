@@ -149,8 +149,20 @@
     {
       "email": "tien@gmail.com",
       "password": "123456",
-      "role": "member",
+      "role": "admin",
       "id": 3
+    },
+    {
+      "email": "tien@gmail.com",
+      "password": "123456",
+      "role": "member",
+      "id": 4
+    },
+    {
+      "email": "tien@gmail.com",
+      "password": "123456",
+      "role": "member",
+      "id": 5
     }
   ],
   "cart": [
@@ -177,6 +189,114 @@
         "quantity": 1
       },
       "id": 2
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 3
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 4
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 5
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 6
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 7
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 8
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 9
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 10
+    },
+    {
+      "products": {
+        "id": 3,
+        "name": "Sữa Chua Mận Hạt Sen",
+        "price": 25000,
+        "images": "https://tocotocotea.com/wp-content/uploads/2022/10/sua-chua-man-hat-sen-.png",
+        "details": "Trà là đồ uống phổ biến ở Việt Nam. Ngày nay, với nhiều cách biến tấu, kết hợp, nhiều vị trà mới ra đời và nhận được sự yêu thích rất lớn, trà xoài ô long là một ví dụ điển hình – một loại thức uống thơm ngon đem lại cho người dùng sự sảng khoái mát lạnh khi thưởng thức. Bạn đã biết cách làm món này chưa? Nếu chưa thì hãy vào bếp cùng Anchay.vn thực hiện ngay bạn nhé!",
+        "categoryId": 3,
+        "quantity": 1
+      },
+      "id": 11
     }
   ]
 }

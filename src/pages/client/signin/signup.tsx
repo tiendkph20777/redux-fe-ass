@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom"
 import { signupApi } from "../../../api/auth";
 import { useAddUserMutation } from "../../../services/user.service";
@@ -6,11 +6,23 @@ import { generateAccessToken } from "./auth.slice";
 import { IUser } from "../../../models";
 
 const Signin = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, control, getValues, setError, formState: { errors }
+    } = useForm();
     const [createFilm, { isSuccess }] = useAddUserMutation()
     const navigate = useNavigate()
 
     const onHandleSubmit = (data: any) => {
+        const { password, confirmPassword } = data;
+
+        // Compare the passwords
+        if (password !== confirmPassword) {
+            setError('confirmPassword', { type: 'manual', message: 'Mật khẩu xác nhận không khớp' });
+        } else {
+            // Passwords match, do something with the data
+            console.log('Data submitted:', data);
+        }
+
+
         const user: IUser = {
             email: data.email,
             password: data.password,
@@ -34,11 +46,11 @@ const Signin = () => {
             <section className="relative flex flex-wrap lg:h-screen lg:items-center">
                 <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
                     <div className="mx-auto max-w-lg text-center">
-                        <h1 className="text-2xl font-bold sm:text-3xl">Get started today!</h1>
+                        <h1 className="text-2xl font-bold sm:text-3xl">Ahihi coffee hello customers</h1>
 
                         <p className="mt-4 text-gray-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla
-                            eaque error neque ipsa culpa autem, at itaque nostrum!
+                            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla
+                            eaque error neque ipsa culpa autem, at itaque nostrum! */}
                         </p>
                     </div>
 
@@ -46,6 +58,7 @@ const Signin = () => {
                         <div>
                             <label className="sr-only">Name</label>
                             <div className="relative">
+                                <label>Name</label>
                                 <input
                                     {...register("name", { required: true })}
                                     type="text"
@@ -58,6 +71,7 @@ const Signin = () => {
                         <div>
                             <label className="sr-only">Email</label>
                             <div className="relative">
+                                <label>Email</label>
                                 <input
                                     {...register("email", { required: true })}
                                     type="email"
@@ -71,12 +85,20 @@ const Signin = () => {
                             <label className="sr-only">Password</label>
 
                             <div className="relative">
+                                <label>Password</label>
                                 <input
-                                    {...register("password", { required: true })}
+                                    {...register('password', { required: 'Vui lòng nhập mật khẩu' })}
                                     type="password"
                                     className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                     placeholder="Enter password"
                                 />
+                                {/* {errors.password && <p>{errors.password.message}</p>} */}
+                                {/* <input
+                                    {...register("password", { required: true })}
+                                    type="password"
+                                    className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                                    placeholder="Enter password"
+                                /> */}
                             </div>
                         </div>
 
@@ -84,25 +106,35 @@ const Signin = () => {
                             <label className="sr-only">confirm Password</label>
 
                             <div className="relative">
+                                <label>Confirm Password</label>
                                 <input
-                                    {...register("confirm password", { required: true })}
+                                    {...register('confirmPassword', {
+                                        required: 'Vui lòng xác nhận mật khẩu',
+                                    })}
                                     type="password"
                                     className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                     placeholder="Enter confirm password"
                                 />
+                                {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+                                {/* <input
+                                    {...register("confirm password", { required: true })}
+                                    type="password"
+                                    className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                                    placeholder="Enter confirm password"
+                                /> */}
                             </div>
                         </div>
 
                         <div className="flex items-center justify-between">
                             <p className="text-sm text-gray-500">
-                                No account?
-                                <Link to={'/signup'}>Sign up</Link>
+                                Yes account?
+                                <Link to={'/signin'}>Sign in</Link>
                             </p>
                             <button
                                 type="submit"
                                 className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
                             >
-                                Sign in
+                                Sign up
                             </button>
                         </div>
                     </form>

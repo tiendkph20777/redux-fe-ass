@@ -4,13 +4,8 @@ import { Col, Row, Button, Table, Pagination } from 'antd';
 import { Breadcrumb } from 'antd';
 import Banner from '../components/Banner';
 import { useFetchProductQuery } from '../../services/product.service';
-<<<<<<< HEAD
-import { Iproducts } from '../../models';
-
-=======
 import { useAddCartMutation } from '../../services/cart.service';
 import { Iproducts } from '../../models';
->>>>>>> 3e4ba079c0318e0b853e590065135485f6d7ceff
 const style: React.CSSProperties = { textAlign: 'center', margin: '10px 21px', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px', padding: '8px', borderRadius: '8px' };
 const image_style: React.CSSProperties = { borderRadius: '8px' };
 
@@ -59,28 +54,28 @@ const ProductList = () => {
         },
     ];
 
-    // const [search, setData] = useState<Iproducts[]>([])
+    const [search, setData] = useState<Iproducts[]>([])
 
-    // const [searchKeyword, setSearchKeyword] = useState<string>('');
-    // const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //     setSearchKeyword(event.target.value);
-    // };
+    const [searchKeyword, setSearchKeyword] = useState<string>('');
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchKeyword(event.target.value);
+    };
 
-    // const handleSearch = () => {
-    //     if (searchKeyword) {
-    //         const filteredProducts = search.filter((product) =>
-    //             product.name.toLowerCase().includes(searchKeyword.toLowerCase())
-    //         );
-    //         setData(filteredProducts);
-    //     } else {
-    //         setData(data);
-    //         return (
-    //             <div>
-    //                 <p>Sản phẩm không tồn tại (●'◡'●)</p>
-    //             </div>
-    //         )
-    //     }
-    // };
+    const handleSearch = () => {
+        if (searchKeyword) {
+            const filteredProducts = search.filter((product) =>
+                product.name.toLowerCase().includes(searchKeyword.toLowerCase())
+            );
+            setData(filteredProducts);
+        } else {
+            setData(data);
+            return (
+                <div>
+                    <p>Sản phẩm không tồn tại (●'◡'●)</p>
+                </div>
+            )
+        }
+    };
 
     return (
         <div>
@@ -101,7 +96,7 @@ const ProductList = () => {
             </div>
 
             <div className='products_main'>
-                {/* <div className="search-container">
+                <div className="search-container">
                     <input
                         type="text"
                         placeholder="Search for products"
@@ -110,7 +105,7 @@ const ProductList = () => {
                         className="search-input"
                     />
                     <Button style={{ backgroundColor: 'black', margin: '6px', color: '#fff' }} onClick={handleSearch}>Search</Button>
-                </div> */}
+                </div>
 
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     {currentProducts?.map((item: Iproducts) => {

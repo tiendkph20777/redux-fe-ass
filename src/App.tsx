@@ -14,12 +14,9 @@ import AdminPage from './pages/admin/dash';
 import Categories from './pages/admin/category/Categories';
 import AddCategory from './pages/admin/category/AddCategory';
 import UpdateCategory from './pages/admin/category/UpdateCategory';
-<<<<<<< HEAD
 import Signin from './pages/client/signin/signin';
 import Signup from './pages/client/signin/signup';
-=======
 import Cart from './pages/client/Cart';
->>>>>>> 3e4ba079c0318e0b853e590065135485f6d7ceff
 
 function App() {
   return (

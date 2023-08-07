@@ -40,15 +40,20 @@ const HeaderHome = () => {
             icon: <InboxOutlined />,
             key: 'alipay',
         },
+        {
+            label: <a><Link to={'/cart'} />Cart</a>,
+            icon: <InboxOutlined />,
+            key: 'cart',
+        },
         isLoggedIn ? (
             {
                 label: (
                     <>
-                        <Button onClick={handleLogout}>Logout</Button>
                         {isAdmin && (
                             // Nếu người dùng có quyền admin, hiển thị liên kết dẫn sang trang admin
                             <a href="/admin">Admin</a>
                         )}
+                        <Button onClick={handleLogout} className='ml-5'>Logout</Button>
                     </>
                 ),
                 key: 'logout',
