@@ -17,19 +17,20 @@ export const productAPI = createApi({
             query: (id) => `/products/${id}`, // Assuming the server endpoint for fetching a single product is like "/products/:id"
             providesTags: (result, error, id) => [{ type: "product", id }], // Provide a tag for the specific product ID
         }),
-        removeProduct: builder.mutation({
-            query: (id: number | string) => ({
-                url: "/products/" + id,
-                method: "DELETE"
+        removeProduct: builder.mutation<void, number | string>({
+            query: (id) => ({
+                url: `/products/${id}`,
+                method: "DELETE",
             }),
-            invalidatesTags: ["product"]
+            invalidatesTags: ["product"],
         }),
-        addProduct: builder.mutation({
-            query: (product: Iproducts) => ({
+        addProduct: builder.mutation<Iproducts, Partial<Iproducts>>({
+            query: (product) => ({
                 url: "/products",
                 method: "POST",
-                body: product
+                body: product,
             }),
+            invalidatesTags: ["product"],
         }),
         updateProduct: builder.mutation<Iproducts, Partial<Iproducts>>({
             query: (updatedProduct) => ({
@@ -44,5 +45,4 @@ export const productAPI = createApi({
 
 // setupListeners(store.dispatch)
 
-export const { useFetchProductQuery, useRemoveProductMutation, useFetchOneProductQuery, useUpdateProductMutation } = productAPI
-
+export const { useFetchProductQuery, useRemoveProductMutation, useFetchOneProductQuery, useUpdateProductMutation, useAddProductMutation } = productAPI;
