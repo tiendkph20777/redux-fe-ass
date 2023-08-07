@@ -6,7 +6,7 @@ const Signin = () => {
     const { register, handleSubmit } = useForm();
     const { data, isLoading } = useFetchUserQuery();
     const navigate = useNavigate();
-    console.log('data :>> ', data);
+    // console.log('data :>> ', data);
 
     const onHandleSubmit = (formData: any) => {
         if (isLoading) {

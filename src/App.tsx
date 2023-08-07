@@ -41,8 +41,8 @@ function App() {
           </Route>
           <Route path='category' >
             <Route index element={<Categories />} />
-            {/* <Route path='add' element={<AddCategory />} /> */}
-            {/* <Route path=':id/update' element={<UpdateCategory />} /> */}
+            <Route path='add' element={<AddCategory />} />
+            <Route path=':id/update' element={<UpdateCategory />} />
           </Route>
         </Route>
         {/* singin */}

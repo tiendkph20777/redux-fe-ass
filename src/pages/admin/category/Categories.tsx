@@ -13,7 +13,7 @@ interface DataType {
 
 const Categories = () => {
     const { data: categories, isLoading } = useFetchCategoriesQuery();
-    const removeCategoryMutation = useRemoveCategoryMutation();
+    const [removeCategory] = useRemoveCategoryMutation();
 
     const [filteredData, setFilteredData] = useState<DataType[]>([]);
     const [searchText, setSearchText] = useState<string>('');
@@ -26,7 +26,7 @@ const Categories = () => {
                     name: item.name,
                 };
             }) || [];
-            console.log(data);
+            // console.log(data);
             setFilteredData(data);
         }
     }, [categories, isLoading]);
@@ -49,7 +49,7 @@ const Categories = () => {
 
     const onRemoveCategory = async (id: number) => {
         try {
-            await removeCategoryMutation.mutateAsync(id);
+            await removeCategory(id);
             notification.success({
                 message: 'Remove',
                 description: (
@@ -80,6 +80,7 @@ const Categories = () => {
             render: (record) => (
                 <span>
                     <Popconfirm
+                        style={{ color: "red" }}
                         title="Are you sure to remove this item?"
                         onConfirm={() => onRemoveCategory(record.key)}
                         okText="Yes"

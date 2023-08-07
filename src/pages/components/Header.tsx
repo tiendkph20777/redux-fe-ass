@@ -51,7 +51,7 @@ const HeaderHome = () => {
                     <>
                         {isAdmin && (
                             // Nếu người dùng có quyền admin, hiển thị liên kết dẫn sang trang admin
-                            <a href="/admin">Admin</a>
+                            <a><Link to={'/admin'} />Admin</a>
                         )}
                         <Button onClick={handleLogout} className='ml-5'>Logout</Button>
                     </>
