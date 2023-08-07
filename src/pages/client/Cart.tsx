@@ -6,19 +6,26 @@ import { Link } from 'react-router-dom';
 import 'antd/dist/reset.css'
 const Cart = () => {
     const { data, isLoading } = useFetchCartQuery();
-    const removeCartItem = useRemoveCartMutation();
-
+    // const removeCartItem = useRemoveCartMutation();
+    const [removeCart] = useRemoveCartMutation();
     if (isLoading) {
         return <div>Loading...</div>;
     }
 
-    const handleDeleteCartItem = (cartItemId: ICart) => {
-        console.log(cartItemId);
-        const confirm = window.confirm('Are you sure you want to delete this item?');
-        if (!confirm) {
-            console.log(cartItemId);
-            // removeCartItem.mutate(cartItemId.key);
-        }
+
+
+    const handleDeleteCartItem = (cartItem: ICart) => {
+        // Gọi hàm removeCart với id của item muốn xóa
+        removeCart(cartItem.key)
+            .unwrap()
+            .then((data) => {
+                console.log("Xóa giỏ hàng thành công");
+                // Thực hiện các hành động khác sau khi xóa thành công (nếu cần)
+            })
+            .catch((error) => {
+                console.error("Lỗi khi xóa giỏ hàng:", error);
+                // Xử lý lỗi nếu có
+            });
     };
 
     // Define the columns for the table
