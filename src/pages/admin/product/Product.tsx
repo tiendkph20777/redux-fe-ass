@@ -19,7 +19,7 @@ const ListProducts = () => {
     const [searchText, setSearchText] = useState('');
     const [searchResult, setSearchResult] = useState<DataType[]>([]);
     const { data: products, isFetching } = useFetchProductQuery(); // Fetch products using the API hook
-    const removeProductMutation = useRemoveProductMutation(); // Hook to remove a product using the API
+    const [removeProductMutation] = useRemoveProductMutation(); // Hook to remove a product using the API
 
     useEffect(() => {
         if (!isFetching) {
@@ -45,8 +45,9 @@ const ListProducts = () => {
     };
 
     const removeProduct = async (id: number) => {
+        console.log(id);
         try {
-            await removeProductMutation.mutateAsync(id);
+            await removeProductMutation(id);
             notification.success({
                 message: 'Remove',
                 description: (

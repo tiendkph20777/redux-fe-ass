@@ -17,6 +17,7 @@ import UpdateCategory from './pages/admin/category/UpdateCategory';
 import Signin from './pages/client/signin/signin';
 import Signup from './pages/client/signin/signup';
 import Cart from './pages/client/Cart';
+import CheckoutPage from './pages/client/CheckoutPage';
 
 function App() {
   return (
@@ -28,14 +29,15 @@ function App() {
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/products" element={<ProductList />} />
           <Route path='cart' element={<Cart />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Route>
         {/* admin */}
         <Route path='/admin' element={<Admin />} >
           <Route index element={<AdminPage />} />
           <Route path='products' >
             <Route index element={<ListProducts />} />
-            {/* <Route path='add' element={<AddProduct />} /> */}
-            {/* <Route path=':id/update' element={<UpdateProduct />} /> */}
+            <Route path='add' element={<AddProduct />} />
+            <Route path=':id/update' element={<UpdateProduct />} />
           </Route>
           <Route path='category' >
             <Route index element={<Categories />} />
