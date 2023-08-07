@@ -26,10 +26,11 @@ const Categories = () => {
                     name: item.name,
                 };
             }) || [];
-            // console.log(data);
+            console.log(data);
             setFilteredData(data);
         }
     }, [categories, isLoading]);
+
 
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value.toLowerCase();

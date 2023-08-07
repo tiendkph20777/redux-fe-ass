@@ -92,7 +92,7 @@ const Cart = () => {
                 <Col span={24} style={{ textAlign: 'right' }}>
                     <strong>Total Price: {totalPrice} VNĐ</strong>
                     <Link to="/checkout">
-                        <Button type="primary">
+                        <Button type="default">
                             Thanh Toán
                         </Button>
                     </Link>

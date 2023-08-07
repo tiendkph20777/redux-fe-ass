@@ -35,6 +35,7 @@ export const categoryAPI = createApi({
                 method: 'PUT',
                 body: updatedCategory,
             }),
+            // invalidatesTags: ['category'],
             invalidatesTags: (result, error, updatedCategory) => [{ type: 'category', id: updatedCategory.id }],
         }),
     }),
