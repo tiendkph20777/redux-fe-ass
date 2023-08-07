@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Iproducts } from '../../../models';
 import { Button, Form, Input, notification, Select } from 'antd';
-import { useUpdateProductMutation, useFetchProductQuery } from '../../../services/product.service';
+import { useUpdateProductMutation, useFetchOneProductQuery } from '../../../services/product.service';
 import { useFetchCategoriesQuery } from '../../../services/category.service';
 
 const { Option } = Select;
@@ -17,9 +17,9 @@ const UpdateProduct: React.FC = () => {
     console.log(id);
     // const { productId } = useParams<RouteParams>();
     const [updateProduct] = useUpdateProductMutation();
-    const { data: product } = useFetchProductQuery(productId);
+    const { data: product } = useFetchOneProductQuery(id);
     const { data: categories } = useFetchCategoriesQuery();
-
+    console.log(product);
     useEffect(() => {
         if (product) {
             form.setFieldsValue({
@@ -36,13 +36,14 @@ const UpdateProduct: React.FC = () => {
 
     const onFinish = async (updatedProduct: Iproducts) => {
         try {
-            await updateProduct(product);
+            // await updateProduct(updateProduct);
+            console.log(updateProduct);
 
-            navigate('/admin/products');
-            notification.success({
-                message: 'Success',
-                description: 'Product updated successfully!',
-            });
+            // navigate('/admin/products');
+            // notification.success({
+            //     message: 'Success',
+            //     description: 'Product updated successfully!',
+            // });
         } catch (error) {
             console.error('Error updating product:', error);
             notification.error({
