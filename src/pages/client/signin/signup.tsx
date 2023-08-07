@@ -8,7 +8,7 @@ import { IUser } from "../../../models";
 const Signin = () => {
     const { register, handleSubmit, control, getValues, setError, formState: { errors }
     } = useForm();
-    const [createFilm, { isSuccess }] = useAddUserMutation()
+    const [createUser, { isSuccess }] = useAddUserMutation()
     const navigate = useNavigate()
 
     const onHandleSubmit = (data: any) => {
@@ -35,7 +35,7 @@ const Signin = () => {
         // const accessToken = generateAccessToken(user);
         // user.accessToken = accessToken;
 
-        createFilm(user);
+        createUser(user);
         navigate("/")
     };
 
@@ -92,13 +92,6 @@ const Signin = () => {
                                     className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                     placeholder="Enter password"
                                 />
-                                {/* {errors.password && <p>{errors.password.message}</p>} */}
-                                {/* <input
-                                    {...register("password", { required: true })}
-                                    type="password"
-                                    className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                                    placeholder="Enter password"
-                                /> */}
                             </div>
                         </div>
 
@@ -116,12 +109,6 @@ const Signin = () => {
                                     placeholder="Enter confirm password"
                                 />
                                 {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
-                                {/* <input
-                                    {...register("confirm password", { required: true })}
-                                    type="password"
-                                    className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                                    placeholder="Enter confirm password"
-                                /> */}
                             </div>
                         </div>
 
