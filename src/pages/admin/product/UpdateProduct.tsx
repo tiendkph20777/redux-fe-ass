@@ -129,7 +129,7 @@ const UpdateProduct: React.FC = () => {
                         </Select>
                     </Form.Item>
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button type="primary" htmlType="submit">
+                        <Button type="default" htmlType="submit">
                             Update Product
                         </Button>
                     </Form.Item>
